@@ -1,0 +1,12 @@
+{
+  "name": "ad-shareui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "ad-hooks": "^1.0.0"
+  },
+  "scripts": {
+    "start": "webpack serve --config ../../webpack.config.js"
+  }
+}
