@@ -9,8 +9,11 @@ interface ItemProps {
     [prop: string]: any;
 }
 
-const Item = ({ options, disabled, className }: ItemProps) => (
-  <Select options={options} inline disabled={disabled} className={className} />
+const Item = ({
+  options, disabled, className, ...rest
+}: ItemProps) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  <Select options={options} inline disabled={disabled} className={className} {...rest} />
 );
 
 Item.defaultProps = {

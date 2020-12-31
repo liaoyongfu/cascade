@@ -9,11 +9,25 @@
     clear: both;
     visibility: visible;
 }
+.administrative-division .Select:last-child {
+    margin-right: 0;
+}
+.ad-len-1 .Select {
+    width: 100%;
+    float: left;
+}
+.ad-len-2 .Select {
+    width: 49%;
+    float: left;
+    margin-right: 1.333333%;
+}
+.ad-len-3 .Select {
+    width: 32.333333%;
+    float: left;
+    margin-right: 1.333333%;
+}
 .ad-len-4 .Select {
     width: 24%;
     float: left;
     margin-right: 1.333333%;
-}
-.ad-len-4 .Select:last-child {
-    margin-right: 0;
 }

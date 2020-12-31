@@ -1,6 +1,16 @@
 import { useDivision } from './hooks';
+import {
+  isCity, isCommunity, isStreet, isDistrict, getChildren, dealDivision, getLen, getParents
+} from './utils/utils';
 
 export {
-  // eslint-disable-next-line import/prefer-default-export
-  useDivision
+  useDivision,
+  isCommunity,
+  isDistrict,
+  isStreet,
+  isCity,
+  dealDivision,
+  getChildren,
+  getLen,
+  getParents
 };
