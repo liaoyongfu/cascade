@@ -3,7 +3,7 @@
 ## 安装
 
 ````
-yarn add ad-shareui cascade-hooks
+yarn add cascade-shareui
 ````
 
 ## 使用
@@ -11,7 +11,7 @@ yarn add ad-shareui cascade-hooks
 ````
 import React from 'react';
 import { useDivision } from 'cascade-hooks';
-import { Division } from 'ad-shareui';
+import { Division } from 'cascade-shareui';
 
 const Demo = () => {
     const [value, setValue] = useState();
