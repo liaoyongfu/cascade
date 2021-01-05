@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](http://192.168.0.184:20000/liaoyf/administrative-division/compare/v1.1.0...v1.2.0) (2021-01-05)
+
+
+### Bug Fixes
+
+* 增加 downlevelIteration 配置 ([238335c](http://192.168.0.184:20000/liaoyf/administrative-division/commits/238335c6b2a6f193716dade64587b7f783c91b2d))
+* 构建为 es5 语法 ([876bc6f](http://192.168.0.184:20000/liaoyf/administrative-division/commits/876bc6f8f4bb1510a0c3ebe28e4c07d3027357e9))
+
+
+### Features
+
+* 增加文档 ([7699222](http://192.168.0.184:20000/liaoyf/administrative-division/commits/76992224610655f9c81c40bc34e2153932dafb15))
+
+
+
+
+
 # 1.1.0 (2021-01-05)
 
 
