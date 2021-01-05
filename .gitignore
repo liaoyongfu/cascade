@@ -22,3 +22,4 @@ es
 .env.local
 
 /.idea
+lerna-debug.log

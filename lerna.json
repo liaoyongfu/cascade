@@ -1,0 +1,16 @@
+{
+  "name": "cascade",
+  "packages": [
+    "packages/*"
+  ],
+  "private": true,
+  "npmClient": "yarn",
+  "version": "0.0.0",
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "yes": true
+    }
+  }
+}
