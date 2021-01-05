@@ -45,7 +45,7 @@
   },
   "scripts": {
     "start": "dumi dev",
-    "build": "lerna build"
+    "build": "lerna run build"
   },
   "dependencies": {
     "classnames": "^2.2.6",
