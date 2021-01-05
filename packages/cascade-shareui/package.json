@@ -1,13 +1,15 @@
 {
   "name": "cascade-shareui",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "es/index.es.js",
+  "types": "lib/index.d.ts",
   "license": "MIT",
   "dependencies": {
     "cascade-hooks": "^1.0.0"
   },
   "scripts": {
-    "start": "webpack serve --config ../../webpack.config.js"
+    "build": "rollup --config rollup.config.js"
   },
   "peerDependencies": {
     "@share/shareui": "^2.27.2"

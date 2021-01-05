@@ -1,12 +1,17 @@
 {
   "name": "cascade-hooks",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "es/index.es.js",
+  "types": "lib/index.d.ts",
   "license": "MIT",
   "files": [
     "dist",
     "lib",
     "es",
     "mock"
-  ]
+  ],
+  "scripts": {
+    "build": "rollup --config rollup.config.js"
+  }
 }

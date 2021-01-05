@@ -17,6 +17,7 @@
     "@typescript-eslint/eslint-plugin": "^4.11.1",
     "@typescript-eslint/parser": "^4.11.1",
     "braft-convert": "^2.3.0",
+    "builtin-modules": "^3.2.0",
     "css-loader": "^5.0.1",
     "draftjs-utils": "^0.10.2",
     "dumi": "^1.1.0",
@@ -29,23 +30,22 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
     "jquery": "^3.5.1",
+    "lerna": "^3.22.1",
+    "postcss": "^8.2.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "rollup": "^2.35.1",
-    "style-loader": "^2.0.0",
-    "ts-loader": "^8.0.12",
-    "typescript": "^4.1.3",
-    "url-loader": "^4.1.1",
-    "webpack": "^5.11.1",
-    "webpack-dev-server": "^3.11.0"
+    "rollup-plugin-node-externals": "^2.2.0",
+    "rollup-plugin-postcss": "^4.0.0",
+    "typescript": "^4.1.3"
   },
   "peerDependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "scripts": {
-    "start:pc": "yarn workspace cascade-shareui start",
-    "start": "dumi dev"
+    "start": "dumi dev",
+    "build": "lerna build"
   },
   "dependencies": {
     "classnames": "^2.2.6",
