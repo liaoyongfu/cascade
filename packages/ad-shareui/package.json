@@ -8,5 +8,8 @@
   },
   "scripts": {
     "start": "webpack serve --config ../../webpack.config.js"
+  },
+  "peerDependencies": {
+    "@share/shareui": "^2.27.2"
   }
 }

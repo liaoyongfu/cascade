@@ -1,6 +1,6 @@
 import { useDivision } from './hooks';
 import {
-  isCity, isCommunity, isStreet, isDistrict, getChildren, dealDivision, getLen, getParents
+  isCity, isCommunity, isStreet, isDistrict, dealDivision, getLen, getParents
 } from './utils/utils';
 
 export {
@@ -10,7 +10,6 @@ export {
   isStreet,
   isCity,
   dealDivision,
-  getChildren,
   getLen,
   getParents
 };

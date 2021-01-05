@@ -4,8 +4,6 @@ import { DivisionItem } from './typings';
 interface DivisionProps{
     // 数据源，须为 useCallback
     dataSource: (() => Promise<DivisionItem[]>) | DivisionItem[];
-    // 初始值
-    initialCode?: string;
 }
 
 // eslint-disable-next-line import/prefer-default-export

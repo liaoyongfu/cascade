@@ -35,7 +35,7 @@ export interface dealDivisionProps {
 
 // 处理行政区划数据
 export const dealDivision = ({
-  data,
+  data = [],
   levelMethods = [isCity, isDistrict, isStreet, isCommunity]
 }: dealDivisionProps) => {
   const dealedData: DivisionItem[] = [];
