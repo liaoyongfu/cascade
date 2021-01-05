@@ -1,6 +1,6 @@
-export interface DivisionItem {
+export interface CascadeItem {
     label: string;
     value: string;
-    children?: DivisionItem[];
+    children?: CascadeItem[];
     [prop: string]: any;
 }

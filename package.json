@@ -1,5 +1,5 @@
 {
-  "name": "administrative-division",
+  "name": "cascade",
   "version": "1.0.0",
   "main": "index.js",
   "private": true,
@@ -44,7 +44,7 @@
     "react-dom": "^16.13.1"
   },
   "scripts": {
-    "start:pc": "yarn workspace ad-shareui start",
+    "start:pc": "yarn workspace cascade-shareui start",
     "start": "dumi dev"
   },
   "dependencies": {

@@ -1,11 +1,14 @@
 ---
-title: ad-hooks
+title: cascade-hooks
 order: 3
+group:
+    title: 指南
+    order: 2
 ---
 
-## ad-hooks 介绍
+## cascade-hooks 介绍
 
-ad-hooks 主要作为工具包依赖，不会直接使用，提供一些工具方法。
+cascade-hooks 主要作为工具包依赖，不会直接使用，提供一些工具方法。
 
 ## Hooks
 
@@ -16,7 +19,7 @@ ad-hooks 主要作为工具包依赖，不会直接使用，提供一些工具�
 ````
 const { options } = useDivision({
     // 数据源，须为 useCallback
-    dataSource: (() => Promise<DivisionItem[]>) | DivisionItem[]
+    dataSource: (() => Promise<CascadeItem[]>) | CascadeItem[]
 });
 ````
 
@@ -27,11 +30,11 @@ const { options } = useDivision({
 - 参数: 
 ````
 {
-    data: DivisionItem[],
+    data: CascadeItem[],
     levelMethods?: ((code: string) => boolean)[]
 }
 ````
-- 返回: DivisionItem[]
+- 返回: CascadeItem[]
 
 将平级数据改为嵌套数据。
 
@@ -70,7 +73,7 @@ const isCommunity = (code: string) => code.substr(10) !== '00';
 ### getLen
 
 ````
-getLen(options: DivisionItem[]) => levelCount
+getLen(options: CascadeItem[]) => levelCount
 ````
 
 获取数据层级数。
@@ -78,7 +81,7 @@ getLen(options: DivisionItem[]) => levelCount
 ### getParents
 
 ````
-getParents(options: DivisionItem[], value: string | undefined) => DivisionItem[]
+getParents(options: CascadeItem[], value: string | undefined) => CascadeItem[]
 ````
 
 获取所有父级项数据。

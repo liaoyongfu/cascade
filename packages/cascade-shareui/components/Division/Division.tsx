@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { CSSProperties } from 'react';
 import cn from 'classnames';
-import { DivisionItem } from 'ad-hooks/typings';
-import { getLen, getParents } from 'ad-hooks';
+import { CascadeItem } from 'cascade-hooks/typings';
+import { getLen, getParents } from 'cascade-hooks';
 import Item from '../Item';
 import './Division.css';
 
@@ -10,7 +11,7 @@ export interface DivisionProps {
      * 数据源
      * @default []
      */
-    options: DivisionItem[],
+    options: CascadeItem[],
     /**
      * 控件值
      */
@@ -36,15 +37,19 @@ export interface DivisionProps {
      */
     col?: number;
     /**
-     * 显示加载中
+     * 显示加载中（每个均会加，如果想单独控制，请使用 itemProps 实现
      */
     loading?: boolean;
+    /**
+     * 配置每项 Select 组件的属性，配置项详见 shareui 的 Select 组件文档
+     */
+    itemProps?: Record<any, any>[];
 }
 
 const Division = ({
-  options, style, value, onChange, disabled, hideEmptyItem, col, loading
+  options, style, value, onChange, disabled, hideEmptyItem, col, loading, itemProps
 }: DivisionProps) => {
-  const handleChange = (opt: DivisionItem, allParents: DivisionItem[], index: number) => {
+  const handleChange = (opt: CascadeItem, allParents: CascadeItem[], index: number) => {
     if (opt) {
       onChange(opt?.value);
     } else if (index > 0) {
@@ -71,8 +76,9 @@ const Division = ({
             isLoading={loading}
             disabled={typeof disabled === 'number' ? index <= disabled : disabled}
             value={allParents[index]}
-            onChange={(option: DivisionItem) => handleChange(option, allParents, index)}
+            onChange={(option: CascadeItem) => handleChange(option, allParents, index)}
             options={itemOptions}
+            {...(itemProps ? itemProps[index] : {})}
           />
         );
       })}

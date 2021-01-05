@@ -1,9 +1,9 @@
 ---
-title: ad-shareui
+title: cascade-shareui
 order: 1
 ---
 
-## ad-shareui 介绍
+## cascade-shareui 介绍
 
 适配 PC 端的级联选择器。
 
@@ -13,7 +13,7 @@ order: 1
 
 ````jsx
 import React, {useState, useCallback} from 'react';
-import {Division} from 'ad-shareui';
+import {Division} from 'cascade-shareui';
 
 export default () => {
     const [value, setValue] = useState('350201');
@@ -70,9 +70,9 @@ export default () => {
 
 ````jsx
 import React, {useState, useCallback} from 'react';
-import {useDivision, dealDivision, isDistrict, isStreet, isCommunity} from 'ad-hooks';
-import {Division} from 'ad-shareui';
-import mockData from 'ad-hooks/mock/allData.json';
+import {useDivision, dealDivision, isDistrict, isStreet, isCommunity} from 'cascade-hooks';
+import {Division} from 'cascade-shareui';
+import mockData from 'cascade-hooks/mock/allData.json';
 
 export default () => {
     const [value, setValue] = useState('350203001011');
@@ -105,9 +105,9 @@ export default () => {
 
 ````jsx
 import React, {useState, useCallback} from 'react';
-import {useDivision, dealDivision} from 'ad-hooks';
-import {Division} from 'ad-shareui';
-import mockData from 'ad-hooks/mock/allData.json';
+import {useDivision, dealDivision} from 'cascade-hooks';
+import {Division} from 'cascade-shareui';
+import mockData from 'cascade-hooks/mock/allData.json';
 
 export default () => {
     const [value, setValue] = useState('350203003001');
@@ -136,9 +136,9 @@ export default () => {
 
 ````jsx
 import React, {useState, useCallback} from 'react';
-import {useDivision, dealDivision, isDistrict, isStreet, isCommunity} from 'ad-hooks';
-import {Division} from 'ad-shareui';
-import mockData from 'ad-hooks/mock/allData.json';
+import {useDivision, dealDivision, isDistrict, isStreet, isCommunity} from 'cascade-hooks';
+import {Division} from 'cascade-shareui';
+import mockData from 'cascade-hooks/mock/allData.json';
 
 export default () => {
     const initialCode = '350203003000';
@@ -177,13 +177,13 @@ export default () => {
 
 ### 控制显示数量/层级
 
-只展示区、街道、社区：
+手动控制显示项：
 
 ````jsx
 import React, {useState, useCallback} from 'react';
-import {useDivision, dealDivision, isDistrict, isStreet, isCommunity} from 'ad-hooks';
-import {Division} from 'ad-shareui';
-import mockData from 'ad-hooks/mock/allData.json';
+import {useDivision, dealDivision, isDistrict, isStreet, isCommunity} from 'cascade-hooks';
+import {Division} from 'cascade-shareui';
+import mockData from 'cascade-hooks/mock/allData.json';
 
 export default () => {
     const initialCode = '';
@@ -213,13 +213,13 @@ export default () => {
 };
 ````
 
-或者可以通过`col`属性控制层级数：
+或者可以通过`col`属性控制前面层级数：
 
 ````jsx
 import React, {useState, useCallback} from 'react';
-import {useDivision, dealDivision} from 'ad-hooks';
-import {Division} from 'ad-shareui';
-import mockData from 'ad-hooks/mock/allData.json';
+import {useDivision, dealDivision} from 'cascade-hooks';
+import {Division} from 'cascade-shareui';
+import mockData from 'cascade-hooks/mock/allData.json';
 
 export default () => {
     const initialCode = '';
@@ -249,8 +249,8 @@ export default () => {
 
 ````jsx
 import React, {useState, useCallback} from 'react';
-import {useDivision, dealDivision} from 'ad-hooks';
-import {Division} from 'ad-shareui';
+import {useDivision, dealDivision} from 'cascade-hooks';
+import {Division} from 'cascade-shareui';
 
 const mockData = [
     {
@@ -326,9 +326,9 @@ export default () => {
 
 ````jsx
 import React, {useState, useCallback} from 'react';
-import {useDivision, dealDivision, isDistrict, isStreet, isCommunity} from 'ad-hooks';
-import {Division} from 'ad-shareui';
-import mockData from 'ad-hooks/mock/allData.json';
+import {useDivision, dealDivision, isDistrict, isStreet, isCommunity} from 'cascade-hooks';
+import {Division} from 'cascade-shareui';
+import mockData from 'cascade-hooks/mock/allData.json';
 
 export default () => {
     const [value, setValue] = useState();
@@ -364,4 +364,124 @@ export default () => {
 }
 ````
 
-<API src="../../packages/ad-shareui/components/Division/Division.tsx"></API>
+### 控制每项的属性
+
+````jsx
+import React, {useState, useCallback} from 'react';
+import {useDivision, dealDivision, isDistrict, isStreet, isCommunity} from 'cascade-hooks';
+import {Division} from 'cascade-shareui';
+import mockData from 'cascade-hooks/mock/allData.json';
+
+export default () => {
+    return (
+        <Division
+            style={{width: 800}}
+            options={[
+                {
+                    label: '思明区',
+                    value: '350201',
+                    children: [
+                        {
+                            label: 'SIM街道',
+                            value: '35020101',
+                            children: []
+                        }
+                    ]
+                }
+            ]}
+            itemProps={[
+                {
+                    placeholder: '全部区'
+                },
+                {
+                    placeholder: '全部街道',
+                    isLoading: true
+                },
+                {
+                    placeholder: '全部社区'
+                }
+            ]}
+        />
+    )
+};
+````
+
+### 适配 @share/shareui-form
+
+````jsx
+import React, {useState, useCallback} from 'react';
+import { Panel } from '@share/shareui';
+import {Division} from 'cascade-shareui';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@share/shareui-html/dist/shareui.css";
+import { createForm, getComponents } from '@share/shareui-form';
+
+const { Form, Row, FormItem, Input } = getComponents('search');
+
+// 可以直接包装在项目中作为组件
+const CascadeWithForm = props => (
+    <FormItem {...props}>
+        {({value, onChange}) => (
+            <Division
+                value={value}
+                onChange={code => onChange({
+                    target: {
+                        value: code
+                    }
+                })}
+                options={[
+                    {
+                        label: '思明区',
+                        value: '350201',
+                        children: [
+                            {
+                                label: 'SIM街道',
+                                value: '35020101',
+                                children: []
+                            }
+                        ]
+                    }
+                ]}
+            />
+        )}
+    </FormItem>
+);
+
+export default createForm(
+    {
+        division: '',
+        name: ''
+    },
+    'form'
+)(({ form }) => {
+    const formValid = () => {
+        alert('校验');
+    }
+    return (
+        <div className="ui-box">
+            <Panel>
+                <Panel.Head title="标题"/>
+                <Form.Fragment pageType="queryPage" formState={form}>
+                    <Form.View query={formValid}>
+                        <CascadeWithForm field="division" label="行政区划" col={6} />
+                        <Input field="name" label="地址名称" col={3} />
+                    </Form.View>
+                </Form.Fragment>
+            </Panel>
+        </div>
+    )
+});
+````
+
+<API src="../../packages/cascade-shareui/components/Division/Division.tsx"></API>
+
+CascadeItem 类型如下：
+
+````
+interface CascadeItem {
+    label: string;
+    value: string;
+    children?: CascadeItem[];
+    [prop: string]: any;
+}
+````

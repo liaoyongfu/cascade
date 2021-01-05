@@ -1,4 +1,4 @@
-import { DivisionItem } from 'ad-hooks/typings';
+import { CascadeItem } from 'cascade-hooks/typings';
 
 export const isCity = (code: string) => code.substr(4) === '00000000';
 export const isDistrict = (code: string) => code.substr(4) !== '00000000' && code.substr(6) === '000000';
@@ -6,11 +6,11 @@ export const isStreet = (code: string) => code.substr(4) !== '00000000' && code.
 export const isCommunity = (code: string) => code.substr(10) !== '00';
 
 export const getChildren = (
-  curItem: DivisionItem,
-  data: DivisionItem[],
+  curItem: CascadeItem,
+  data: CascadeItem[],
   levelMethods: LevelMethods,
   index: number
-): DivisionItem[] => {
+): CascadeItem[] => {
   if (index === levelMethods.length - 1) return [];
   if (index + 1 === levelMethods.length - 1) {
     return data.filter((item) => (
@@ -28,9 +28,9 @@ export const getChildren = (
 export type LevelMethods = ((code: string) => boolean)[];
 
 export interface dealDivisionProps {
-  data: DivisionItem[];
+  data: CascadeItem[];
   levelMethods?: LevelMethods;
-  compare?: (prev: DivisionItem, next: DivisionItem, preLevelMethod: (code: string) => boolean) => boolean;
+  compare?: (prev: CascadeItem, next: CascadeItem, preLevelMethod: (code: string) => boolean) => boolean;
 }
 
 // 处理行政区划数据
@@ -38,7 +38,7 @@ export const dealDivision = ({
   data = [],
   levelMethods = [isCity, isDistrict, isStreet, isCommunity]
 }: dealDivisionProps) => {
-  const dealedData: DivisionItem[] = [];
+  const dealedData: CascadeItem[] = [];
   for (let i = 0; i < levelMethods.length; i += 1) {
     const find = data.filter((item) => levelMethods[i](item.value));
 
@@ -60,10 +60,10 @@ export const dealDivision = ({
   return dealedData;
 };
 
-export const getLen = (options: DivisionItem[]) => {
+export const getLen = (options: CascadeItem[]) => {
   let maxLevel = 0;
 
-  const mapOptions = (data: DivisionItem[], level: number) => {
+  const mapOptions = (data: CascadeItem[], level: number) => {
     if (level > maxLevel) {
       maxLevel = level;
     }
@@ -80,10 +80,10 @@ export const getLen = (options: DivisionItem[]) => {
 };
 
 export
-const getParents = (options: DivisionItem[], value: string | undefined) => {
-  let allParents: DivisionItem[] = [];
+const getParents = (options: CascadeItem[], value: string | undefined) => {
+  let allParents: CascadeItem[] = [];
 
-  const mapOptions = (data: DivisionItem[], parents: DivisionItem[]) => {
+  const mapOptions = (data: CascadeItem[], parents: CascadeItem[]) => {
     data.forEach((item) => {
       if (item.value === value) {
         allParents = [...parents, item];

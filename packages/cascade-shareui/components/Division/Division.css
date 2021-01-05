@@ -1,5 +1,6 @@
 .administrative-division{
     display: inline-block;
+    width: 100%;
 }
 .administrative-division:after {
     content: '';
@@ -10,24 +11,24 @@
     visibility: visible;
 }
 .administrative-division .Select:last-child {
-    margin-right: 0;
+    margin-right: 0!important;
 }
 .ad-len-1 .Select {
     width: 100%;
     float: left;
 }
 .ad-len-2 .Select {
-    width: 49%;
+    width: 49%!important;
     float: left;
-    margin-right: 1.333333%;
+    margin-right: 1.333333%!important;
 }
 .ad-len-3 .Select {
-    width: 32.333333%;
+    width: 32.333333%!important;
     float: left;
-    margin-right: 1.333333%;
+    margin-right: 1.333333%!important;
 }
 .ad-len-4 .Select {
-    width: 24%;
+    width: 24%!important;
     float: left;
-    margin-right: 1.333333%;
+    margin-right: 1.333333%!important;
 }

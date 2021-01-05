@@ -1,9 +1,9 @@
 import React from 'react';
 import { Select } from '@share/shareui';
-import { DivisionItem } from 'ad-hooks/typings';
+import { CascadeItem } from 'cascade-hooks/typings';
 
 interface ItemProps {
-    options: DivisionItem[];
+    options: CascadeItem[];
     disabled?: boolean;
     className?: string;
     [prop: string]: any;

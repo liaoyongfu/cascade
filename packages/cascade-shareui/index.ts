@@ -1,7 +1,7 @@
 import Division from './components/Division';
-import DivisionItem from './components/Item';
+import CascadeItem from './components/Item';
 
 export {
   Division,
-  DivisionItem
+  CascadeItem
 };

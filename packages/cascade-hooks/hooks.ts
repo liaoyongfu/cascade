@@ -1,16 +1,16 @@
 import { useCallback, useEffect, useState } from 'react';
-import { DivisionItem } from './typings';
+import { CascadeItem } from './typings';
 
 interface DivisionProps{
     // 数据源，须为 useCallback
-    dataSource: (() => Promise<DivisionItem[]>) | DivisionItem[];
+    dataSource: (() => Promise<CascadeItem[]>) | CascadeItem[];
 }
 
 // eslint-disable-next-line import/prefer-default-export
 export const useDivision = ({
   dataSource
 }: DivisionProps) => {
-  const [options, setOptions] = useState<DivisionItem[]>([]);
+  const [options, setOptions] = useState<CascadeItem[]>([]);
 
   const fetchDivision = useCallback(async () => {
     const response = typeof dataSource === 'function' ? await dataSource() : dataSource;

@@ -3,14 +3,14 @@
 ## 安装
 
 ````
-yarn add ad-shareui ad-hooks
+yarn add ad-shareui cascade-hooks
 ````
 
 ## 使用
 
 ````
 import React from 'react';
-import { useDivision } from 'ad-hooks';
+import { useDivision } from 'cascade-hooks';
 import { Division } from 'ad-shareui';
 
 const Demo = () => {
