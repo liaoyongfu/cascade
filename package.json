@@ -45,13 +45,11 @@
   },
   "scripts": {
     "start": "dumi dev",
-    "build": "lerna run build"
+    "build": "lerna run build",
+    "build:doc": "dumi build"
   },
   "dependencies": {
     "classnames": "^2.2.6",
     "draft-js": "^0.11.7"
-  },
-  "resolutions": {
-    "@types/react-router": "5.1.9"
   }
 }

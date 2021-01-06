@@ -28,6 +28,6 @@ export default defineConfig({
         { src : 'https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js'},
         { src : 'https://cdn.bootcdn.net/ajax/libs/bootstrap-datetimepicker/1.0.0/js/bootstrap-datetimepicker.min.js'}
     ],
-    exportStatic:{},
+    // exportStatic:{},
     // more config: https://d.umijs.org/config
 });

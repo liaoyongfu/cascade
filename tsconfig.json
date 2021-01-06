@@ -10,7 +10,8 @@
     "baseUrl": "./",
     "strict": true,
     "paths": {
-      "@/*": ["packages/*"]
+      "@/*": ["*"],
+      "@@/*": [".umi/*"]
     },
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,

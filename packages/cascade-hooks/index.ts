@@ -1,7 +1,7 @@
-import { useDivision } from './hooks';
+import { useDivision } from './src/hooks';
 import {
   isCity, isCommunity, isStreet, isDistrict, dealDivision, getLen, getParents
-} from './utils/utils';
+} from './src/utils/utils';
 
 export {
   useDivision,

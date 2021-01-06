@@ -9,7 +9,8 @@
     "dist",
     "lib",
     "es",
-    "mock"
+    "mock",
+    "typings.ts"
   ],
   "scripts": {
     "build": "rollup --config rollup.config.js"

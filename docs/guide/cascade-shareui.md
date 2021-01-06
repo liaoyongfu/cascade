@@ -473,7 +473,7 @@ export default createForm(
 });
 ````
 
-<API src="../../packages/cascade-shareui/components/Division/Division.tsx"></API>
+<API src="../../packages/cascade-shareui/src/components/Division/Division.tsx"></API>
 
 CascadeItem 类型如下：
 
