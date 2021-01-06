@@ -3,7 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 
 export default {
-  input: './index.ts',
+  input: './src/index.ts',
   output: [
     {
       file: 'lib/index.js', // 输出的文件
@@ -18,9 +18,7 @@ export default {
   ],
   plugins: [
     typescript({
-      tsconfig: './tsconfig.json',
-      declaration: true,
-      outDir: './'
+      tsconfig: './tsconfig.json'
     }),
     commonjs(),
     postcss({

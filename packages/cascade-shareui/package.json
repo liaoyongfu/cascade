@@ -15,8 +15,13 @@
     "@share/shareui": "^2.27.2"
   },
   "devDependencies": {
+    "@rollup/plugin-multi-entry": "^4.0.0",
     "@share/shareui": "^2.27.2",
     "@share/shareui-form": "^1.8.2",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
     "webpack-cli": "^4.3.1"
   }
 }

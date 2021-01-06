@@ -16,6 +16,7 @@
     "resolveJsonModule": true,
     "downlevelIteration": true
   },
+  "include": ["**/*.ts"],
   "exclude": [
     "node_modules",
     "lib",

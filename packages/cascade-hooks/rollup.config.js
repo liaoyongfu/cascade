@@ -3,24 +3,22 @@ import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 
 export default {
-  input: './index.ts',
+  input: './src/index.ts',
   output: [
     {
       file: 'lib/index.js', // 输出的文件
       format: 'cjs', // 格式化方式,cjs=>CommonJS
-      sourcemap: false// 是否生成sourcemap
+      sourcemap: true// 是否生成sourcemap
     },
     {
       file: 'es/index.es.js',
       format: 'es',
-      sourcemap: false
+      sourcemap: true
     }
   ],
   plugins: [
     typescript({
-      tsconfig: './tsconfig.json',
-      declaration: true,
-      outDir: './'
+      tsconfig: './tsconfig.json'
     }),
     commonjs(),
     postcss({
@@ -31,6 +29,7 @@ export default {
     'react',
     'react-dom',
     '@share/shareui',
-    'classnames'
+    'classnames',
+    'cascade-hooks'
   ]
 };

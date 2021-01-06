@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { CascadeItem } from './typings';
+import { CascadeItem } from '../typings';
 
 interface DivisionProps{
     // 数据源，须为 useCallback
