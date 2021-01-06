@@ -1,12 +1,12 @@
 {
   "name": "cascade-shareui",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "lib/index.js",
   "module": "es/index.es.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
   "dependencies": {
-    "cascade-hooks": "^1.1.0"
+    "cascade-hooks": "^1.2.1"
   },
   "scripts": {
     "build": "rollup --config rollup.config.js"

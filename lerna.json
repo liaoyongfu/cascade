@@ -5,7 +5,7 @@
   ],
   "private": true,
   "npmClient": "yarn",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "useWorkspaces": true,
   "command": {
     "publish": {
